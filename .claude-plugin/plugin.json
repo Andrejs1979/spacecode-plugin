@@ -1,0 +1,13 @@
+{
+  "name": "spacecode",
+  "description": "Cloud dev environments for Claude Code — run tasks, reviews, and CI in ephemeral sandboxes via SpaceCode",
+  "version": "1.0.0",
+  "author": {
+    "name": "SpaceCode",
+    "url": "https://spacecode.app"
+  },
+  "homepage": "https://spacecode.app",
+  "repository": "https://github.com/spacecodeapp/spacecode-plugin",
+  "license": "MIT",
+  "keywords": ["cloud", "sandbox", "remote", "mcp", "ci", "code-review", "devops"]
+}
