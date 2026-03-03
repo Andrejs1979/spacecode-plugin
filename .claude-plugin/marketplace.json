@@ -1,0 +1,13 @@
+{
+  "name": "spacecode-plugin",
+  "description": "SpaceCode plugins for Claude Code — cloud dev environments, remote code execution, and CI",
+  "owner": "s-p-a-c-e-code",
+  "plugins": [
+    {
+      "name": "spacecode",
+      "description": "Run tasks, code reviews, and CI in ephemeral cloud sandboxes via SpaceCode MCP",
+      "source": "./plugins/spacecode",
+      "category": "Cloud Development"
+    }
+  ]
+}
