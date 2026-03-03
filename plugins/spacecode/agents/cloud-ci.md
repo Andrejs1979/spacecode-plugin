@@ -1,7 +1,37 @@
 ---
 name: cloud-ci
+color: green
 description: |
-  Use this agent when the user wants to run tests, linting, or type-checking in a cloud sandbox. Examples: <example>Context: User wants to run tests remotely. user: "Run the tests in the cloud" assistant: "I'll use the cloud-ci agent to run your test suite in a cloud sandbox." <commentary>User asks to run tests remotely — dispatch to cloud CI.</commentary></example> <example>Context: User wants CI-like validation without local setup. user: "I don't have the test deps installed locally, can you run them remotely?" assistant: "I'll use the cloud-ci agent to run the tests in a cloud environment." <commentary>No local test setup — cloud CI is the right tool.</commentary></example> <example>Context: User wants to validate before pushing. user: "Run lint and tests before I push" assistant: "I'll use the cloud-ci agent to run lint and tests in a cloud sandbox." <commentary>Pre-push validation request triggers cloud CI.</commentary></example>
+  Use this agent when the user wants to run tests, linting, or type-checking in a cloud sandbox.
+
+  Examples:
+
+  <example>
+  Context: User wants to run tests remotely.
+  user: "Run the tests in the cloud"
+  assistant: "I'll use the cloud-ci agent to run your test suite in a cloud sandbox."
+  <commentary>
+  User asks to run tests remotely — dispatch to cloud CI.
+  </commentary>
+  </example>
+
+  <example>
+  Context: User wants CI-like validation without local setup.
+  user: "I don't have the test deps installed locally, can you run them remotely?"
+  assistant: "I'll use the cloud-ci agent to run the tests in a cloud environment."
+  <commentary>
+  No local test setup — cloud CI is the right tool.
+  </commentary>
+  </example>
+
+  <example>
+  Context: User wants to validate before pushing.
+  user: "Run lint and tests before I push"
+  assistant: "I'll use the cloud-ci agent to run lint and tests in a cloud sandbox."
+  <commentary>
+  Pre-push validation request triggers cloud CI.
+  </commentary>
+  </example>
 model: sonnet
 ---
 

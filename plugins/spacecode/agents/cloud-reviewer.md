@@ -1,7 +1,37 @@
 ---
 name: cloud-reviewer
+color: yellow
 description: |
-  Use this agent when the user wants an independent code review from a cloud sandbox. Examples: <example>Context: User wants their code reviewed before a PR. user: "Can you review my code changes?" assistant: "I'll use the cloud-reviewer agent to dispatch a code review to a cloud sandbox." <commentary>User asks for code review — dispatch to cloud for independent analysis.</commentary></example> <example>Context: User is about to create a pull request. user: "I'm ready to create a PR, but want a review first" assistant: "Let me use the cloud-reviewer agent to get an independent review of your changes." <commentary>Pre-PR review request triggers cloud code review.</commentary></example> <example>Context: User wants a second opinion on their implementation. user: "Can you get a fresh pair of eyes on this branch?" assistant: "I'll dispatch a cloud review agent to analyze your branch independently." <commentary>Request for independent review triggers the cloud reviewer.</commentary></example>
+  Use this agent when the user wants an independent code review from a cloud sandbox.
+
+  Examples:
+
+  <example>
+  Context: User wants their code reviewed before a PR.
+  user: "Can you review my code changes?"
+  assistant: "I'll use the cloud-reviewer agent to dispatch a code review to a cloud sandbox."
+  <commentary>
+  User asks for code review — dispatch to cloud for independent analysis.
+  </commentary>
+  </example>
+
+  <example>
+  Context: User is about to create a pull request.
+  user: "I'm ready to create a PR, but want a review first"
+  assistant: "Let me use the cloud-reviewer agent to get an independent review of your changes."
+  <commentary>
+  Pre-PR review request triggers cloud code review.
+  </commentary>
+  </example>
+
+  <example>
+  Context: User wants a second opinion on their implementation.
+  user: "Can you get a fresh pair of eyes on this branch?"
+  assistant: "I'll dispatch a cloud review agent to analyze your branch independently."
+  <commentary>
+  Request for independent review triggers the cloud reviewer.
+  </commentary>
+  </example>
 model: sonnet
 ---
 
