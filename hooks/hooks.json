@@ -1,0 +1,47 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "The user is about to run a Bash command. Check if this command contains any of these destructive patterns: 'rm -rf /', 'rm -rf ~', 'rm -rf *', 'git push --force', 'git push -f', 'git reset --hard', 'DROP TABLE', 'DROP DATABASE', 'truncate', ':(){:|:&};:', 'mkfs', 'dd if=', '> /dev/sda'. If the command contains any of these patterns, respond with: {\"decision\": \"block\", \"reason\": \"Blocked destructive command: [pattern]. Use with caution.\"}. Otherwise respond with: {\"decision\": \"allow\"}. Only check the tool input, do not run anything."
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "mcp__spacecode__remote_exec|mcp__spacecode__remote_exec_batch",
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "A cloud task just completed via remote_exec or remote_exec_batch. Remind the assistant to check the task results and offer to show details via remote_task_status if any task failed or had a non-zero exit code. Respond with: {\"systemMessage\": \"Cloud task completed. If any tasks failed, offer to check details with remote_task_status.\"}"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "The conversation is ending. Check if there were any remote_exec or remote_exec_batch tool calls during this conversation that may have left running sandboxes. If so, remind the assistant to offer cancelling them via remote_cancel. Respond with: {\"decision\": \"approve\", \"reason\": \"Session ending. Consider cancelling any orphaned cloud tasks with remote_cancel.\"}"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash -c 'REMOTE=$(git remote get-url origin 2>/dev/null); if [ -n \"$REMOTE\" ]; then REPO=$(echo \"$REMOTE\" | sed -E \"s|.*github\\.com[:/]||\" | sed \"s/\\.git$//\"); echo \"{\\\"systemMessage\\\": \\\"Current git repo: $REPO\\\"}\"; fi'",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  }
+}
