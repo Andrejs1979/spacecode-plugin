@@ -22,16 +22,6 @@
         ]
       }
     ],
-    "Stop": [
-      {
-        "hooks": [
-          {
-            "type": "prompt",
-            "prompt": "The conversation is ending. Check if there were any remote_exec or remote_exec_batch tool calls during this conversation that may have left running sandboxes. If so, remind the assistant to offer cancelling them via remote_cancel. Respond with: {\"decision\": \"approve\", \"reason\": \"Session ending. Consider cancelling any orphaned cloud tasks with remote_cancel.\"}"
-          }
-        ]
-      }
-    ],
     "UserPromptSubmit": [
       {
         "hooks": [
